@@ -1,9 +1,9 @@
 #include <stdio.h>
-
 #include "stdlib.h"
 #include "stdbool.h"
 
 #include "svet.h"
+#include "file_manager.h"
 
 /**
  * V dynamickej pamati vytvori nove pole podla zadanych parametrov. Treba potom DEALOKOVAT!
@@ -53,41 +53,37 @@ _Bool setPolicko(int index1, int index2, POLE_DATA* data, _Bool zivaBunka) {
     return false;
 }
 
-/**
- * @return true - nahodne, false - manualne
- */
-_Bool vyberSposobInicializacie() {
-    char volba;
-    printf("Vyberte prosím spôsob generovania: n - nahodné nastavenie | m -manuálne nastavanie  (n/m): ");
-    scanf("%c", &volba);
 
-    return (volba == 'n' || volba == 'N');
-}
-
-void vytvorSvet(POLE_DATA* svet, bool nahodne) {
+void vytvorSvet(POLE_DATA* svet, int sposobGenerovania) {
 
     vytvorPole(svet);
+    if (sposobGenerovania == GENEROVAT_ZO_SUBORU) {
+        char vstup[150];
+        printf("Zadajte cestu k existujucemu suboru > ");
+        scanf("%s", vstup);
+        if (!nacitajVzor(vstup, svet)) {
+            printf(" (info) > Bude sa generovat nahodne...\n");
+            sposobGenerovania = GENEROVAT_NAHODNE;
+        }
+    }
 
-    if (nahodne) {
+    if (sposobGenerovania == GENEROVAT_NAHODNE) {
         for (int i = 0; i < svet->dim1; ++i) {
             for (int j = 0; j < svet->dim2; ++j) {
                 setPolicko(i, j, svet, rand() % 2 == 0);
             }
         }
-    } else {
-        // cout << "Manuálne nastavenie farieb:" << endl; // cout je pre c++, pre c je printf()
-        printf("Manuálne nastavenie farieb:\n");
-        for (int i = 0; i < svet->dim1; ++i) {
-            for (int j = 0; j < svet->dim2; ++j) {
+    } else if (sposobGenerovania == GENEROVAT_MANUALNE){
+        printf("Manuálne nastavenie buniek:\n");
+        for (int i = 0; i < svet->dim1; i++) {
+            for (int j = 0; j < svet->dim2; j++) {
                 char volba;
-                printf("Bunka [%d][%d]: Má byť bunka živá? (a/n): ", i, j);
-                scanf("%c", &volba);
+                printf("\nBunka [%d][%d]: Má byť bunka živá? (a/n): ", i, j);
+                scanf(" %c", &volba);
+//                sleep(5);
                 setPolicko(i, j, svet, (volba == 'a' || volba == 'A'));
             }
         }
-        // tuto else vetvu by som spravil inak: podla mna by sa mal program spytat, ktoru bunku chce uzivatel ozivit.
-        // Toto by program cyklicky opakoval, kym by uzivatel nezadal nejaky ukoncovaci znak. Ostatne policka by
-        // boli nastavene na false - mrtve
     }
 }
 

@@ -7,4 +7,6 @@ add_executable(POS_semestralka_GoL main.c
         file_manager.h
         svet.h
         file_manager.c
-        svet.c)
+        svet.c
+        terminal_manager.h
+        terminal_manager.c)
