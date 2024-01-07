@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/POS_semestralka_GoL.dir/main.c.o -o POS_semestralka_GoL  -liostrem 
