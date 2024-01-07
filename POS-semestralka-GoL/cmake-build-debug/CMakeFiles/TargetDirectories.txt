@@ -1,0 +1,3 @@
+C:/Users/MatejPol/CLionProjects/POS-semestralka-GoL/cmake-build-debug/CMakeFiles/POS_semestralka_GoL.dir
+C:/Users/MatejPol/CLionProjects/POS-semestralka-GoL/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/MatejPol/CLionProjects/POS-semestralka-GoL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
