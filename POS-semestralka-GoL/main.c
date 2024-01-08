@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "signal.h"
+#include <signal.h>
+
 #include "svet.h"
+#include "file_manager.h"
 
 
 void spracuj_signal(int param) {
@@ -39,18 +41,20 @@ int main(int argc, char *argv[]) {
 //    if(!nacitajVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet))
 //        return 0;
 //
-//    printf("Vychodzia pozicia %d:\n", 0);
-//    vykresliPole(&svet);
-//
-//    for (int krok = 1; krok < 20; ++krok) {
-//        printf("Krok %d:\n", krok);
-//        aktualizujSvet(&svet);
-//        vykresliPole(&svet);
-//
-//        sleep(1);
-//    }
-//    ulozVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet);
-//
-//    znicPole(&svet);
+
+    printf("Vychodzia pozicia %d:\n", 0);
+    vykresliPole(&svet);
+
+    for (int krok = 1; krok < 20; ++krok) {
+        printf("Krok %d:\n", krok);
+        aktualizujSvet(&svet);
+        vykresliPole(&svet);
+
+        sleep(1);
+    }
+    ulozVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet);
+
+    znicPole(&svet);
+
     return 0;
 }
