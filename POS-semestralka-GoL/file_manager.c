@@ -2,7 +2,6 @@
 #include "string.h"
 #include "file_manager.h"
 
-
 /**
  * Ukladanie 0 a 1, ako mrtve a zive bunky.
  * @param cesta_k_suboru - cesta pre subor na zapisanie vzoru
@@ -10,7 +9,7 @@
  * @return - uspesnost zapisu
  */
 void ulozVzor(const char* cesta_k_suboru, POLE_DATA* data) {
-    FILE * file_ptr = fopen(cesta_k_suboru, "w"); // ak subor neexistuje, vytvori ho
+    FILE * file_ptr = fopen(cesta_k_suboru, "w"); // ak subor neexistuje, vytvori ho. Ak existuje, tak ho prepise
 
     fprintf(file_ptr, "%d %d\n", data->dim1, data->dim2); // prvy riadok sluzi na informaciu, kolko riadkov a stlpcov bude pole mat
 
