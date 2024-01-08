@@ -1,7 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
+#include <unistd.h><
 #include <signal.h>
 
 #include "svet.h"
