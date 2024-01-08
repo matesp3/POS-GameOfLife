@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "signal.h"
+#include <signal.h>
 
 #include "svet.h"
 #include "file_manager.h"
@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
 //    if(!nacitajVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet))
 //        return 0;
 //
+
     printf("Vychodzia pozicia %d:\n", 0);
     vykresliPole(&svet);
 
@@ -54,5 +55,6 @@ int main(int argc, char *argv[]) {
     ulozVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet);
 
     znicPole(&svet);
+
     return 0;
 }
