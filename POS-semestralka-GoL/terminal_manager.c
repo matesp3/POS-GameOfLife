@@ -26,7 +26,6 @@ int vyberSposobInicializacie() {
     int volba, vysledok;
     printf("\nAkym sposobom chcete vytvorit vzor? (zadajte cislo)"
            "\n 1 - nahodne generovat\n 2 - poskytnut vzor ulozeny v subore\n 3 - manualne zadat hodnotu kazdej bunky\nVasa volba > ");
-//    printf("Vyberte prosím spôsob generovania: n - nahodné nastavenie | m -manuálne nastavanie  (n/m): ");
 
     do {
         volba = nacitajCislo();
