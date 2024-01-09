@@ -11,4 +11,6 @@ add_executable(POS_semestralka_GoL main.c
         terminal_manager.h
         terminal_manager.c
         pole_stringov.h
-        pole_stringov.c)
+        pole_stringov.c
+        my_client_socket.h
+        my_client_socket.c)

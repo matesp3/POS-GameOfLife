@@ -6,6 +6,7 @@
 
 #include "svet.h"
 #include "file_manager.h"
+#include "my_client_socket.h"
 
 
 void spracuj_signal(int param) {
@@ -38,10 +39,9 @@ int main(int argc, char *argv[]) {
 //     Vytvorenie sveta s vybraným spôsobom inicializácie
     vytvorSvet(&svet,  vyberSposobInicializacie());
 
-//    if(!nacitajVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet))
+//    if(!nacitajVzor("pokusnySubor.txt", &svet))
 //        return 0;
 //
-
     printf("Vychodzia pozicia %d:\n", 0);
     vykresliPole(&svet);
 
@@ -52,9 +52,9 @@ int main(int argc, char *argv[]) {
 
         sleep(1);
     }
-    ulozVzor("/tmp/tmp.Y27gDGX4qB/pokusnySubor.txt", &svet);
+    ulozVzor("pokusnySubor.txt", &svet);
 
     znicPole(&svet);
-
+//    komunikujSoServerom();
     return 0;
 }
