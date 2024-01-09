@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/POS_GoL_server.dir/main.c.o -o POS_GoL_server 
