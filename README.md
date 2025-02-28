@@ -1,3 +1,3 @@
 # POS-GameOfLife
-Semestrálna práca z predmetu princípy operačných systémov | 
-Autori: Tomáš Barčík, Matej Poljak
+Semestral work from subject Principles of Operating Systems | 
+Authors: Tomáš Barčík, Matej Poljak
